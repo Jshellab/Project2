@@ -1,5 +1,13 @@
 # PokePals
 
+##Running on new System
+When loading this project (or any Angular Project) after puling go to the folder like you're going to use `ng serve --open`
+and make sure you run `npm install` first otherwise it won't work
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
