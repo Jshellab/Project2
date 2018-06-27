@@ -1,6 +1,6 @@
 # PokePals
 
-##Running on new System
+## Running on new System
 When loading this project (or any Angular Project) after puling go to the folder like you're going to use `ng serve --open`
 and make sure you run `npm install` first otherwise it won't work
 
