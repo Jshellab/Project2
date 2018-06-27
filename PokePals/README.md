@@ -6,7 +6,8 @@ and make sure you run `npm install` first otherwise it won't work
 
 ## Disclaimer
 Using this application may not make you a Pokemon master it might but we aren't sure either way
-              -Sincerily The Management
+            
+        Sincerily The Management
 
 
 ## Angular Disclaimer
