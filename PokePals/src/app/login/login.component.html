@@ -1,29 +1,32 @@
-
+<h1>
+  Welcome Trainers!
+</h1>
 <div class="container">
   <div class="card rounded-0">
     <div class="card-header">
       <h2>Login Form</h2>
     </div>
     <div class="card-body">
-      <form class="form-group">
+      <form class="form-group" typeof="Post">
         <div>
           <label class="text-center">TrainerID: </label>
-          <input type="text" id="emailField" name="usernamebox" class="form-control text-center" placeholder="Where you put your username">
+          <br>
+          <input type="text" id="emailField" name="usernamebox" class=" form-control text-center" placeholder="Where you put your username" style=" margin-left: ; max-width:1000px; alignment: center">
           <br>
           <label class="text-center">Password</label>
-          <input type="password" id="passField" name="passwordbox" class="form-control text-center" placeholder="Insert Password here">
+          <br>
+          <input type="password" id="passField" name="passwordbox" class="form-control text-center" placeholder="Insert Password here" style="max-width: 1000px; alignment: center">
           <br>
           <br>
-          <div class="btn-group" role="group">
-            <button id="Submitter" class="btn btn-primary" style="alignment: center; max-width: 300px;"><img src="../../assets/Charizard.png" />Continue Adventure</button>
-            <button id="Registerbtn" class="btn btn-secondary"><img src="../../assets/4.png"/>Start New Adventure</button>
-          </div>
+
+          <button id="Submitter" class="btn btn-primary" style="alignment: center;"><img src="../../assets/charizard.gif" />(Login) Continue Adventure</button>
+          <br>
+          <a routerLink="/register"><button id="Registerbtn" class="btn btn-secondary" style="max-height: 500px" ><img src="../../assets/charmander.gif"/>Start New Adventure (Register)</button></a>
           <br>
         </div>
       </form>
     </div>
 
   </div>
-
   <div id="centerer" class="img-fluid"></div>
 </div>
