@@ -1,27 +1,28 @@
-<h1>
+<h1 class="text-center">
   Welcome Trainers!
 </h1>
-<div class="container">
+<div class="container text-center">
   <div class="card rounded-0">
     <div class="card-header">
       <h2>Login Form</h2>
     </div>
     <div class="card-body">
-      <form class="form-group" typeof="Post">
+      <form class="form-group">
         <div>
-          <label class="text-center">TrainerID: </label>
+          <label class="text-center">Trainer Username</label>
           <br>
-          <input type="text" id="emailField" name="usernamebox" class=" form-control text-center" placeholder="Where you put your username" style=" margin-left: ; max-width:1000px; alignment: center">
+          <input type="text" id="UserField" name="usernamebox" class=" form-control text-center" placeholder="What do other trainers call you" style=" margin:0 auto;alignment: center">
           <br>
           <label class="text-center">Password</label>
           <br>
-          <input type="password" id="passField" name="passwordbox" class="form-control text-center" placeholder="Insert Password here" style="max-width: 1000px; alignment: center">
+          <input type="password" id="passField" name="passwordbox" class="form-control text-center" placeholder="Insert Password here" style="margin: 0 auto; alignment: center">
           <br>
           <br>
 
-          <button id="Submitter" class="btn btn-primary" style="alignment: center;"><img src="../../assets/charizard.gif" />(Login) Continue Adventure</button>
+          <button id="Submitter" class="btn btn-primary" style="alignment: center;" formaction="/userscreen"><img src="../../assets/charizard.gif" />(Login) Continue Adventure</button>
           <br>
-          <a routerLink="/register"><button id="Registerbtn" class="btn btn-secondary" style="max-height: 500px" ><img src="../../assets/charmander.gif"/>Start New Adventure (Register)</button></a>
+          <br>
+          <a routerLink="/register"><button id="Registerbtn" class="btn btn-secondary" style="max-height: 500px"><img src="../../assets/charmander.gif"/>Start New Adventure (Register)</button></a>
           <br>
         </div>
       </form>
