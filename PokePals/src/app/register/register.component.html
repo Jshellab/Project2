@@ -1,4 +1,55 @@
-<p>
-  register works!
-</p>
-<button (click)="goBack()" class="btn btn-danger"><img src="../../assets/spinda.gif"/>Back</button>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <!-- form card login -->
+          <div class="card rounded-0">
+            <div class="card-header">
+              <h3 class="mb-0">Enter your trainer information below</h3>
+            </div>
+            <div class="card-body">
+              <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="">
+                <div class="form-group">
+                  <label for="username">Requested Username</label>
+                  <input type="text" class="form-control form-control-lg rounded-0" id="username" required="">
+                  <div class="invalid-feedback">Everyone needs a nickname!</div>
+                </div>
+                <div class="form-group">
+                  <label for="password1box">Please enter a Password</label>
+                  <input type="password" class="form-control form-control-lg rounded-0" id="password1box" required="">
+                  <label for="password2box">Please confirm Password</label>
+                  <input type="password" class="form-control form-control-lg rounded-0" id="password2box" required="">
+                  <div class="invalid-feedback">Enter your password too!</div>
+                </div>
+                <div class="form-group">
+                  <label for="firstNamebox">Your First Name:</label>
+                  <input type="text" class="form-control form-control-lg rounded-0" id="firstNamebox" required="">
+                  <label for="lastNamebox">Your Last Name:</label>
+                  <input type="password" class="form-control form-control-lg rounded-0" id="lastNamebox" required="">
+                  <div class="invalid-feedback">We need your last name too please</div>
+                </div>
+                <div class="form-group">
+                  <label for="addressbox">Address:</label>
+                  <input type="text" class="form-control form-control-lg rounded-0" id="addressbox" required="">
+                  <label for="citybox">City:</label>
+                  <input type="text" class="form-control form-control-lg rounded-0" id="citybox" required="">
+                  <label for="Statebox">State:</label>
+                  <input type="text" class="form-control form-control-lg rounded-0" id="Statebox" required="">
+                  <label for="ZipCodebox">Zipcode:</label>
+                  <input type="text" class="form-control form-control-lg rounded-0" id="ZipCodebox" required="">
+                  <div class="invalid-feedback">You have to be from somewhere</div>
+                </div>
+              </form>
+              <div class="btn-group">
+                <button (click)="goBack()" class="btn btn-danger"><img src="../../assets/spinda.gif"/>Back</button>
+                <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login<img src="../../assets/pignite.gif" /></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
