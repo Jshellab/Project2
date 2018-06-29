@@ -9,6 +9,6 @@ import com.revature.models.Trainer;
 public interface TrainerRepository extends JpaRepository<Trainer, Integer>{
 	
 	public Trainer findTrainerByUsername(String username);
-	public Trainer findUserByUsernameAndPassword(String username, String password);
+	public Trainer findTrainerByUsernameAndPassword(String username, String password);
 
 }

@@ -25,11 +25,11 @@ public class TrainerController {
 	
 	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public List<Trainer> findAllUsers(){
+	public List<Trainer> findAllTrainers(){
 		return trainerService.findAllTrainers();
 	}
 	
-	@GetMapping(value="/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public Trainer findTrainerByUsername(@PathVariable("username") String username) {
 		return trainerService.findTrainerByUsername(username);

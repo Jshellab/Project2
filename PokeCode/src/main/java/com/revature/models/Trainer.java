@@ -9,9 +9,12 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Component
 @Entity
 @Table(name="TRAINER")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Trainer implements Serializable{
 
 	/**

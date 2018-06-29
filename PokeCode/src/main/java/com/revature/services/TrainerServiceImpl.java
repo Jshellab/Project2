@@ -17,32 +17,29 @@ public class TrainerServiceImpl implements TrainerService{
 	TrainerRepository trainerRepo;
 	
 	public List<Trainer> findAllTrainers() {
-		return null;
-	}
-
-	public Trainer findTrainerByUsername() {
-		// TODO Auto-generated method stub
-		return null;
+		return trainerRepo.findAll();
 	}
 
 	public Trainer addTrainer(Trainer newTrainer) {
-		// TODO Auto-generated method stub
-		return null;
+		for(Trainer trainer : findAllTrainers()) {
+			if(trainer.getUsername().equals(newTrainer.getUsername())) {
+				return null;
+			}
+		}
+		return trainerRepo.save(newTrainer);
 	}
 
 	public Trainer updateTrainer(Trainer trainer) {
-		// TODO Auto-generated method stub
-		return null;
+		return trainerRepo.save(trainer);
 	}
 
 	public Trainer loginTrainer(Trainer t) {
-		// TODO Auto-generated method stub
-		return null;
+		return trainerRepo.findTrainerByUsernameAndPassword(t.getUsername(), t.getPassword());
 	}
 
 	public Trainer findTrainerByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+		return trainerRepo.findTrainerByUsername(username);
 	}
+
 
 }
