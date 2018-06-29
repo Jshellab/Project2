@@ -12,6 +12,7 @@ export class HttpService {
 
   getPokemon(url: string): Promise<any>
   {
+    url = url.toLowerCase();
     return this.http.get(this.url+url).toPromise();
   }
 }
