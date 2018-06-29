@@ -7,11 +7,11 @@ import { Pokemon } from './Pokemon';
   providedIn: 'root'
 })
 export class HttpService {
-  url: string ='https://pokeapi.co/api/v2/pokemon/';
+  url: string = 'https://pokeapi.co/api/v2/pokemon/';
   constructor(private http: HttpClient) { }
 
-  getPokemon(url: string): Promise<any>
-  {
+  getPokemon(url: string): Promise<any> {
+    url = url.toLowerCase();
     return this.http.get(this.url+url).toPromise();
   }
 }
