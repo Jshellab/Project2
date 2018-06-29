@@ -1,0 +1,9 @@
+#sprite{
+  height: 300px;
+  width: 300px;
+}
+#cardBody{
+  height: 625px;
+  background-image: url("../../assets/whosthatpokemon.png");
+  background-size: contain;
+}
