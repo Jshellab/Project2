@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BoxesComponent } from './boxes/boxes.component';
 import { PostComponent } from './post/post.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
     NavbarComponent,
     BoxesComponent,
     PostComponent,
-    ProfileComponent
+    ProfileComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,

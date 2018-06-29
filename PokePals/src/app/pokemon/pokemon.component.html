@@ -1,0 +1,49 @@
+<div class = 'container'>
+  <div class="card rounded-0">
+    <div class="card-header">
+      <form (ngSubmit)="onSubmit()">
+        <div class="row justify-content-center">
+          <label for="name" class="col-4 col-form-label"><h3>Who's that pokemon!</h3></label>
+          <input type="text" class="form-control col-5" name="name" [(ngModel)]="url" placeholder="Pokemon Name">
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <button type="submit" class="btn btn-info btn-block col-9">Submit</button>
+        </div>
+        <br>
+      </form>
+    </div>
+    <div class="card-body" id="cardBody">
+
+      <div *ngIf="showing">
+        <img src={{currentPoke.sprite}} id="sprite">
+        <table class="table table-bordered table-light">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Type(s)</th>
+              <th scope="col">Stats</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{currentPoke.id}}</td>
+              <td>{{currentPoke.name | titlecase}}</td>
+              <td>
+                <div *ngFor="let type of currentPoke.types">
+                    {{type.type.name | titlecase}}
+                </div>
+              </td>
+              <td>
+                <div  *ngFor="let stat of currentPoke.stats">
+                  {{stat.stat.name | titlecase}}: {{stat.base_stat}}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
