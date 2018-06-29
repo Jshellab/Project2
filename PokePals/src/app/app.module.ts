@@ -5,12 +5,24 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { UserscreenComponent } from './userscreen/userscreen.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BoxesComponent } from './boxes/boxes.component';
+import { PostComponent } from './post/post.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserscreenComponent,
+    NavbarComponent,
+    BoxesComponent,
+    PostComponent,
+    ProfileComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,
