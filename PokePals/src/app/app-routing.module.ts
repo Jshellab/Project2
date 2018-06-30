@@ -7,6 +7,7 @@ import {UserscreenComponent} from './userscreen/userscreen.component';
 import {BoxesComponent} from './boxes/boxes.component';
 import {PostComponent} from './post/post.component';
 import {ProfileComponent} from './profile/profile.component';
+import {UserpostComponent} from './userpost/userpost.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
