@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userscreen.component.css']
 })
 export class UserscreenComponent implements OnInit {
-
+  firstName = 'James';
+  lastName = 'Smith';
+  NameSpot = this.firstName + ' ' + this.lastName;
   constructor() { }
 
   ngOnInit() {

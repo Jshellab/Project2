@@ -15,7 +15,7 @@
 
 /* Change the color of links on hover */
 #navboi a:hover {
-  background-color: #ddd;
+  background-color: darkgray;
   color: black;
 }
 
