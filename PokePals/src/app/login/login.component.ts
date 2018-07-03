@@ -26,10 +26,8 @@ export class LoginComponent implements OnInit {
         if((this.currentTrainer.username === this.tempUsername) && this.currentTrainer.password === this.tempPw){
           this.router.navigateByUrl('/userscreen');
         }
-        else{
-          this.notValid = true;
-        }
       }
+      this.notValid = true;
     });
   }
   onSubmit(){

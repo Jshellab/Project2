@@ -16,10 +16,12 @@ public class TrainerServiceImpl implements TrainerService{
 	@Autowired
 	TrainerRepository trainerRepo;
 	
+	@Override
 	public List<Trainer> findAllTrainers() {
 		return trainerRepo.findAll();
 	}
-
+	
+	@Override
 	public Trainer addTrainer(Trainer newTrainer) {
 		for(Trainer trainer : findAllTrainers()) {
 			if(trainer.getUsername().equals(newTrainer.getUsername())) {
@@ -28,15 +30,18 @@ public class TrainerServiceImpl implements TrainerService{
 		}
 		return trainerRepo.save(newTrainer);
 	}
-
+	
+	@Override
 	public Trainer updateTrainer(Trainer trainer) {
 		return trainerRepo.save(trainer);
 	}
-
+	
+	@Override
 	public Trainer loginTrainer(Trainer t) {
 		return trainerRepo.findTrainerByUsernameAndPassword(t.getUsername(), t.getPassword());
 	}
-
+	
+	@Override
 	public Trainer findTrainerByUsername(String username) {
 		return trainerRepo.findTrainerByUsername(username);
 	}
