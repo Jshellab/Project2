@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Trainer;
 import com.revature.services.TrainerService;
 
-@Controller
+@RestController
 @RequestMapping("/trainers")
 public class TrainerController {
 
@@ -24,25 +25,21 @@ public class TrainerController {
 	TrainerService trainerService;
 	
 	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
 	public List<Trainer> findAllTrainers(){
 		return trainerService.findAllTrainers();
 	}
 	
 	@GetMapping(value="/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
 	public Trainer findTrainerByUsername(@PathVariable("username") String username) {
 		return trainerService.findTrainerByUsername(username);
 	}
 	
 	@PatchMapping(produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
 	public Trainer updateTrainer(@RequestBody Trainer t) {
 		return trainerService.updateTrainer(t);
 	}
 	
 	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
 	public Trainer createTrainer(@RequestBody Trainer t) {
 		return trainerService.addTrainer(t);
 	}
