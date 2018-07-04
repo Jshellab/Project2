@@ -1,5 +1,4 @@
 export interface Trainer{
-  id: number;
   username: string;
   password: string;
   firstname: string;
@@ -7,5 +6,5 @@ export interface Trainer{
   address: string;
   city: string;
   state: string;
-  zipcode: number;
+  zipcode: string;
 }
