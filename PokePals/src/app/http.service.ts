@@ -8,7 +8,8 @@ import { Trainer } from './Trainer';
 export class HttpService {
   url: string = 'https://pokeapi.co/api/v2/pokemon/';
   url2: string = 'http://pokemon.us-east-2.elasticbeanstalk.com/trainers';
-  url3: string = 'http://pokemon.us-east-2.elasticbeanstalk.com/post'
+  url4: string = "http://pokemon.us-east-2.elasticbeanstalk.com/pokemon";
+  url3: string = 'http://pokemon.us-east-2.elasticbeanstalk.com/post';
   user: string;
   trainer: Trainer;
   constructor(private http: HttpClient) { }
@@ -28,6 +29,11 @@ export class HttpService {
   createUser(trainer: Trainer): Promise<any> {
     return this.http.post(this.url2, trainer).toPromise();
   }
+
+  getTrainerBoxes(): Promise<any>{
+    return this.http.get(this.url4+"/"+this.trainer.username).toPromise();
+  }
+
   getUserPost(url: string): Promise<any> {
     return this.http.get(this.url3 + this.user).toPromise();
   }
