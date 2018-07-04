@@ -13,8 +13,8 @@ export class BoxesComponent implements OnInit {
   constructor(private http: HttpService) { }
 
   showing: boolean = false;
-  currentPokemon: Pokemon[];
-  boxPoke:[any];
+  currentPokemon: Pokemon;
+  boxPoke: Pokemon[];
 
   ngOnInit() {
   }
@@ -26,11 +26,16 @@ export class BoxesComponent implements OnInit {
 
   getTrainerBoxes(){
     this.http.getTrainerBoxes().then((res)=>{
-      this.currentPokemon = res;
-      for(let i = 0; i<this.currentPokemon.length; i++ ){
-        this.http.getPokemon(this.currentPokemon[i].id.toString()).then((res)=>{
-          this.boxPoke += res;
-        });
+      for(let i = 0; i< res.length; i++ ){
+        if(res[i].box === 1){
+          this.http.getPokemon(res[i].poke_number.toString()).then((res)=>{
+            this.currentPokemon.id = res.id;
+            this.currentPokemon.name = res.name;
+            this.currentPokemon.types = res.types;
+            this.currentPokemon.sprite = res.sprites.front_default;
+            this.currentPokemon.stats = res.stats;
+          });
+        }
       }
     });
   }
