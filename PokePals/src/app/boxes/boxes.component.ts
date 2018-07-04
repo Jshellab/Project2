@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
-import { Pokemon } from '../Pokemon';
-import { Trainer } from '../Trainer';
 
 @Component({
   selector: 'app-boxes',
@@ -44,4 +41,5 @@ export class BoxesComponent implements OnInit {
       this.boxPoke.push(currentPokemon);
     });
   }
+
 }
