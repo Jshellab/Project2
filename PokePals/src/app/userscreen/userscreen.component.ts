@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ HttpService } from "../http.service";
+import { HttpService } from "../http.service";
 
 
 @Component({
@@ -16,7 +16,7 @@ export class UserscreenComponent implements OnInit {
   ngOnInit() {
     this.firstName = this.http.trainer.firstname;
     this.lastName = this.http.trainer.lastname;
-    this.NameSpot = this.firstName+ " "+this.lastName;
+    this.NameSpot = this.firstName +" "+ this.lastName;
   }
 
 }

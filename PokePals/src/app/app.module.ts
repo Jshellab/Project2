@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { FormsModule } from '@angular/forms';
 import { UserpostComponent } from './userpost/userpost.component';
+import { CatchComponent } from './catch/catch.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserpostComponent } from './userpost/userpost.component';
     PostComponent,
     ProfileComponent,
     PokemonComponent,
-    UserpostComponent
+    UserpostComponent,
+    CatchComponent
   ],
   imports: [
     BrowserModule,
