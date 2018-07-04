@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
           this.notValid = true;
          }
        }
+       else{
+        this.notValid = true;
+       }
     });
   }
   onSubmit(){
