@@ -8,6 +8,7 @@ import {BoxesComponent} from './boxes/boxes.component';
 import {PostComponent} from './post/post.component';
 import {ProfileComponent} from './profile/profile.component';
 import {UserpostComponent} from './userpost/userpost.component';
+import {CatchComponent} from './catch/catch.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'userscreen', component: UserscreenComponent},
   {path: 'boxes', component: BoxesComponent},
   {path: 'post', component: PostComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'catch', component: CatchComponent}
 ];
 
 @NgModule({
