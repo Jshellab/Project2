@@ -11,7 +11,7 @@
     </div>
     <div class="card-body">
       <div *ngIf="showing">
-        <table id="box" class="table table-borded table-light">
+        <table class="table table-bordered table-light">
           <thead class="thead-dark">
             <tr>
               <th scope="col">Appearance</th>
@@ -22,18 +22,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor = "let pokemon of currentPoke">
-              <td>{{pokemon.sprites.front_default}}</td>
+            <tr *ngFor = "let pokemon of boxPoke">
+              <td><img src={{pokemon.sprite}}></td>
               <td>{{pokemon.id}}</td>
-              <td>{{pokemon.name}}</td>
+              <td>{{pokemon.name | titlecase}}</td>
               <td>
-                <div *ngFor = "let types of currentPoke.types">
-                  {{types.type.name}}
+                <div *ngFor = "let type of pokemon.types">
+                  {{type.type.name | titlecase}}
                 </div>
               </td>
               <td>
-                <div *ngFor = "let stats of currentPoke.stats">
-                  {{stats.stat.name}}: {{stat.base_stat}}
+                <div *ngFor = "let stat of pokemon.stats">
+                  {{stat.stat.name | titlecase}}: {{stat.base_stat}}
                 </div>
               </td>
             </tr>
