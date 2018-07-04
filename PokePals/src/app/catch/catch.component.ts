@@ -27,6 +27,7 @@ export class CatchComponent implements OnInit {
       this.caughtPoke.sprite = '../../assets/unown-interrogation.gif';
       // this.caughtPoke.id = 0;
       document.getElementById('alert').innerHTML = 'Nothing was caught...Try again?';
+      document.getElementById('goodalert').innerHTML = '';
     } else {
       this.url = poke.toString();
       document.getElementById('alert').innerHTML = 'Something Happened?!';

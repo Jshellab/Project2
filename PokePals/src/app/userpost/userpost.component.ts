@@ -10,24 +10,50 @@ import { UserPost } from '../UserPost';
 })
 export class UserpostComponent implements OnInit {
   url: '';
-  currentPost: UserPost = {
-    postid: 0,
-    userID: 0,
-    poke1: 0,
-    poke2: 0,
-    description: ''
-  };
+  i: 0;
+  Postings: Array <UserPost> = [];
+  // currentPost: UserPost = {
+  //   post_Id: 0,
+  //   trade_pokemon: 0,
+  //   receive_pokemon: 0,
+  //   description: '',
+  //   status: '',
+  // };
   constructor(private http: HttpService) { }
   ngOnInit() {
+    this.getPosts();
   }
   getPosts() {
-    this.http.getUserPost(this.url).then((res) => {
-      this.currentPost.postid = res.postid;
-      this.currentPost.userID = res.userID;
-      this.currentPost.poke1 = res.poke1;
-      this.currentPost.poke2 = res.poke2;
-      this.currentPost.description = res.description;
+    // let i = 0;
+
+    this.http.getUserPost().then((res) => {
+      console.log(res);
+      for(let i = 0; i < res.length; i++){
+        let currentPost: UserPost = {
+          post_Id: 0,
+          trade_pokemon: 0,
+          receive_pokemon: 0,
+          description: '',
+          status: '',
+        };
+        currentPost.post_Id = res[i].post_Id;
+        currentPost.trade_pokemon = res[i].trade_pokemon;
+        currentPost.receive_pokemon = res[i].receive_pokemon;
+        currentPost.description = res[i].description;
+        currentPost.status = res[i].status;
+        console.log(currentPost);
+        this.Postings.push(currentPost);
+        console.log(this.Postings);
+      }
     });
   }
 
 }
+// for ( i = 0; i < 2; i++) {
+//   this.currentPost.post_Id = res[i].post_Id;
+//   this.currentPost.trade_pokemon = res[i].trade_pokemon;
+//   this.currentPost.receive_pokemon = res[i].receive_pokemon;
+//   this.currentPost.description = res[i].description;
+//   this.currentPost.status = res[i].status;
+//   this.Postings[i] = this.currentPost;
+// }
