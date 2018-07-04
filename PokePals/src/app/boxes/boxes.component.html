@@ -1,22 +1,42 @@
 <app-navbar></app-navbar>
-<div class="card-group">
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Box 1</h4>
-      <p class="card-text">Pokemon Here</p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Box 2</h4>
-      <p class="card-text">Pokemon here</p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Box 3</h4>
-      <p class="card-text">Pokemon here</p>
+<div class="container">
+  <div class="card-group">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Box 1</h4>
+        <p class="card-text">Pokemon Here</p>
+        <button type="submit" name="button" (click)="onSubmit()">Get your pokemon</button>
+        <div *ngIf="showing">
+          <table id="box" class="table table-borded table-light">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Appearance</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type(s)</th>
+                <th scope="col">Base Stats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let pokemon of boxPoke">
+                <td>{{pokemon.sprites.front_default}}</td>
+                <td>{{pokemon.id}}</td>
+                <td>{{pokemon.name}}</td>
+                <td>
+                  <div *ngFor = "let types of boxPoke.types">
+                    {{type.type.name}}
+                  </div>
+                </td>
+                <td>
+                  <div *ngFor = "let stats of boxPoke.stats">
+                    {{stat.stat.name}}: {{stat.base_stat}}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
