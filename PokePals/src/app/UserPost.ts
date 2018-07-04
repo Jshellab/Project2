@@ -1,7 +1,7 @@
 export interface UserPost {
-  postid: number;
-  userID: number;
-  poke1: number;
-  poke2: number;
+  post_Id: number;
+  trade_pokemon: number;
+  receive_pokemon: number;
   description: string;
+  status: string;
 }
