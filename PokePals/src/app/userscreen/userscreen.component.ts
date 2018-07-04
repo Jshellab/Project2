@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import{ HttpService } from "../http.service";
+
 
 @Component({
   selector: 'app-userscreen',
@@ -6,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userscreen.component.css']
 })
 export class UserscreenComponent implements OnInit {
-  firstName = 'James';
-  lastName = 'Smith';
-  NameSpot = this.firstName + ' ' + this.lastName;
-  constructor() { }
+  firstName = '';
+  lastName = '';
+  NameSpot = "";
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
+    this.firstName = this.http.trainer.firstname;
+    this.lastName = this.http.trainer.lastname;
+    this.NameSpot = this.firstName+ " "+this.lastName;
   }
 
 }

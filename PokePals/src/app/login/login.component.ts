@@ -3,7 +3,6 @@ import { HttpService } from '../http.service';
 import { Trainer } from '../Trainer';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,14 +19,17 @@ export class LoginComponent implements OnInit {
   }
 
   getTrainer(){
-    this.http.getTrainers().then((res)=>{
-      for(let i = 0; i < res.length; i++){
-        this.currentTrainer = res[i];
-        if((this.currentTrainer.username === this.tempUsername) && this.currentTrainer.password === this.tempPw){
+    this.http.user = "/"+this.tempUsername;
+    this.http.getTrainer().then((res)=>{
+       if(res !== null){
+         if(res.password === this.tempPw){
+          this.http.trainer = res;
           this.router.navigateByUrl('/userscreen');
-        }
-      }
-      this.notValid = true;
+         }
+         else{
+          this.notValid = true;
+         }
+       }
     });
   }
   onSubmit(){
