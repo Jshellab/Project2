@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -13,7 +13,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { FormsModule } from '@angular/forms';
 import { UserpostComponent } from './userpost/userpost.component';
-import { CatchComponent } from './catch/catch.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,7 @@ import { CatchComponent } from './catch/catch.component';
     PostComponent,
     ProfileComponent,
     PokemonComponent,
-    UserpostComponent,
-    CatchComponent
+    UserpostComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+com\revature\services\TrainerService.class
+com\revature\BootDriver.class
+com\revature\services\TrainerServiceImpl.class
+com\revature\repositories\TrainerRepository.class
+com\revature\controllers\TrainerController.class
+com\revature\models\Trainer.class
