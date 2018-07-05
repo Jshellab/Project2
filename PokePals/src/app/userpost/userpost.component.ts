@@ -59,9 +59,7 @@ subPost: SubmitPost = {
         currentPost.receive_pokemon = res[i].receive_pokemon;
         currentPost.description = res[i].description;
         currentPost.status = res[i].status;
-        console.log(currentPost);
         this.Postings.push(currentPost);
-        console.log(this.Postings);
       }
     });
   }

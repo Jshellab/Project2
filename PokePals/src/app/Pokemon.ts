@@ -4,4 +4,5 @@ export interface Pokemon {
     sprite: string;
     stats: string[];
     types: string[];
+    pokemonId: number;
 }

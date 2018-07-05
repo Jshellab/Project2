@@ -16,7 +16,8 @@ export class CatchComponent implements OnInit {
     name: 'Nothing',
     sprite: '../../assets/unown-interrogation.gif',
     stats: [],
-    types: []
+    types: [],
+    pokemonId: 0
   };
   caughPoke: CaughtP = {
     box: 1,
