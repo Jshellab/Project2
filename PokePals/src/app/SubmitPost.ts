@@ -1,7 +1,7 @@
 
 export class SubmitPost {
-  trade_pokemon: string;
-  receive_pokemon: string;
+  trade_pokemon: number;
+  receive_pokemon: number;
   description: string;
   status: string;
   trainer: {

@@ -33,6 +33,8 @@ export class CatchComponent implements OnInit {
     const chance = Math.round(Math.random());
     const poke = Math.floor((Math.random() * 802) + 1);
     if (chance === 0) {
+      this.caught.id = 0;
+      this.caught.name = '';
       this.caught.sprite = '../../assets/unown-interrogation.gif';
       // this.caughtPoke.id = 0;
       document.getElementById('alert').innerHTML = 'Nothing was caught...Try again?';
