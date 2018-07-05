@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Pokemon} from '../Pokemon';
 import { HttpService } from '../http.service';
 import { UserPost } from '../UserPost';
+import { SubmitPost } from '../SubmitPost';
 
 @Component({
   selector: 'app-userpost',
@@ -12,6 +13,15 @@ export class UserpostComponent implements OnInit {
   url: '';
   i: 0;
   Postings: Array <UserPost> = [];
+subPost: SubmitPost = {
+  trade_pokemon: 0,
+  receive_pokemon: 0,
+  description: '',
+  status: 'open',
+  trainer: {
+    trainer_Id: 0
+  }
+};
   // currentPost: UserPost = {
   //   post_Id: 0,
   //   trade_pokemon: 0,
@@ -24,11 +34,19 @@ export class UserpostComponent implements OnInit {
     this.getPosts();
   }
   PushInfo() {
-    this.http.addUserPost();
+    // this.subPost.description = document.getElementById('DescripBox').value;
+    this.subPost.status = 'open';
+    this.subPost.trainer.trainer_Id = this.http.trainer.trainer_Id;
+    var json = JSON.parse(JSON.stringify(this.subPost));
+    this.http.addUserPost(json);
+    // this.subPost.trade_pokemon;
+    // this.subPost.status = 'open';
+    // this.subPost.trainer.trainer_Id = this.http.trainer.trainer_Id;
+    // this.http.addUserPost();
   }
   getPosts() {
     this.http.getUserPost().then((res) => {
-      for(let i = 0; i < res.length; i++){
+      for (let i = 0; i < res.length; i++) {
         let currentPost: UserPost = {
           post_Id: 0,
           trade_pokemon: 0,
