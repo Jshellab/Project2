@@ -23,9 +23,10 @@ export class UserpostComponent implements OnInit {
   ngOnInit() {
     this.getPosts();
   }
+  PushInfo() {
+    this.http.addUserPost();
+  }
   getPosts() {
-    // let i = 0;
-
     this.http.getUserPost().then((res) => {
       for(let i = 0; i < res.length; i++){
         let currentPost: UserPost = {

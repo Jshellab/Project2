@@ -35,7 +35,7 @@ export class BoxesComponent implements OnInit {
     this.showBox = false;
     this.showParty = true;
   }
-
+  
   getTrainerBoxes(){
     this.http.getTrainerPoke().then((res)=>{
       for(let i = 0; i< res.length; i++ ){

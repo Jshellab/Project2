@@ -3,10 +3,10 @@
   <div class="text-center">
     <p>This is where we can catch Pokemon to trade and Collect!</p>
     <div class="card">
-      <div class="card-img-top" ><img src="{{caughtPoke.sprite}}"></div>
+      <div class="card-img-top" ><img src="{{caught.sprite}}"></div>
       <div class="card-body">
-        <h5 class="card-title">Caught: {{caughtPoke.name}}</h5>
-        <h6>Pokemon ID: {{caughtPoke.id}}</h6>
+        <h5 class="card-title">Caught: {{caught.name}}</h5>
+        <h6>Pokemon ID: {{caught.id}}</h6>
         <button class="btn btn-info btn-outline-primary" (click)="catchPoke()">Catch em All</button>
         <div class="text-warning" id="alert"></div>
         <div class="text-success" id="goodalert"></div>

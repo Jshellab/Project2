@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
     city: '',
     state: '',
     zipcode: '',
+    trainer_Id: 0
   };
 
 
@@ -38,7 +39,6 @@ export class RegisterComponent implements OnInit {
     var json = JSON.parse(JSON.stringify(this.newTrainer));
     this.http.createUser(json);
     this.router.navigateByUrl('/login');
-
   }
 
 }

@@ -4,7 +4,7 @@
     <div class="card-body" id="cardBody">
 
       <div>
-        <h1 class="text-center"><img src="../../assets/delibird.gif">Trade Requests<img src="../../assets/pelipper.gif"></h1>
+        <h1 class="text-center"><img src="../../assets/delibird.gif">Pokemon Swap<img src="../../assets/pelipper.gif"></h1>
         <h6><img src="../../assets/124.gif" style="display: inline"/><h3 style="display: inline">Description</h3><img src="../../assets/125.gif"><br>You can't catch them all alone! Users who have submitted request on this page are looking to trade their Pokemon for ones they might need!
             Please note that because you're doing this through a non-official link your pokemon won't evolve like they would under normal trade conditions!</h6>
         <table class="table table-bordered table-light">
@@ -15,16 +15,21 @@
             <th scope="col">Poke2</th>
             <th scope="col">UserID</th>
             <th scope="col">Description</th>
+            <th scope="col">Status</th>
             <th scope="col">Agree/Deny</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let currentPost of Postings; let i=index" [attr.data-index]="i">
+            <td>{{currentPost.post_Id}}</td>
+            <td>{{currentPost.trade_pokemon}}</td>
+            <td>{{currentPost.receive_pokemon}}</td>
+            <td>{{currentPost.trainer_Id}}</td>
+            <td>{{currentPost.description}}</td>
+            <td>{{currentPost.status}}</td>
+            <td>
+              <button class="btn btn-success" style="width:100%;">Agree</button>
+            </td>
           </tr>
           </tbody>
         </table>
