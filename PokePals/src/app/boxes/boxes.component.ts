@@ -13,9 +13,7 @@ export class BoxesComponent implements OnInit {
   constructor(private http: HttpService) { }
 
   showing: boolean = false;
-  currentPokemon: Pokemon[];
-  boxPoke:[any];
-
+  boxPoke: Array<Pokemon> = [];
   ngOnInit() {
   }
 
@@ -26,12 +24,24 @@ export class BoxesComponent implements OnInit {
 
   getTrainerBoxes(){
     this.http.getTrainerBoxes().then((res)=>{
-      this.currentPokemon = res;
-      for(let i = 0; i<this.currentPokemon.length; i++ ){
-        this.http.getPokemon(this.currentPokemon[i].id.toString()).then((res)=>{
-          this.boxPoke += res;
-        });
-      }
+      for(let i = 0; i< res.length; i++ ){
+          if(res[i].box === 0){
+            this.getPokemon(res[i].poke_number.toString());
+          }
+        }
+    });
+  }
+
+  getPokemon(url: string){
+    this.http.getPokemon(url).then((res)=>{
+      var currentPokemon: Pokemon={
+        id: res.id,
+        name: res.name,
+        sprite: res.sprites.front_default,
+        types: res.types,
+        stats: res.stats
+      };
+      this.boxPoke.push(currentPokemon);
     });
   }
 }
