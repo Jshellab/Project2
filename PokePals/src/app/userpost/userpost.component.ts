@@ -28,7 +28,7 @@ export class UserpostComponent implements OnInit {
 
     this.http.getUserPost().then((res) => {
       console.log(res);
-      for(let i = 0; i < res.length; i++){
+      for (let i = 0; i < res.length; i++) {
         let currentPost: UserPost = {
           post_Id: 0,
           trade_pokemon: 0,

@@ -1,4 +1,4 @@
-export interface Trainer{
+export interface Trainer {
   username: string;
   password: string;
   firstname: string;
@@ -7,4 +7,5 @@ export interface Trainer{
   city: string;
   state: string;
   zipcode: string;
+  trainer_Id: number;
 }

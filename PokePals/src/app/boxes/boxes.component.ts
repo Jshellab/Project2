@@ -22,10 +22,10 @@ export class BoxesComponent implements OnInit {
     this.getTrainerBoxes();
   }
 
-  getTrainerBoxes(){
-    this.http.getTrainerBoxes().then((res)=>{
-      for(let i = 0; i< res.length; i++ ){
-          if(res[i].box === 0){
+  getTrainerBoxes() {
+    this.http.getTrainerBoxes().then((res) => {
+      for (let i = 0; i < res.length; i++ ) {
+          if (res[i].box === 0) {
             this.getPokemon(res[i].poke_number.toString());
           }
         }
@@ -33,8 +33,8 @@ export class BoxesComponent implements OnInit {
   }
 
   getPokemon(url: string){
-    this.http.getPokemon(url).then((res)=>{
-      var currentPokemon: Pokemon={
+    this.http.getPokemon(url).then((res) => {
+      var currentPokemon: Pokemon = {
         id: res.id,
         name: res.name,
         sprite: res.sprites.front_default,

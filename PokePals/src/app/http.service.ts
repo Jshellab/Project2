@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Trainer } from './Trainer';
+import { Pokemon } from './Pokemon';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class HttpService {
   url3: string = 'http://pokemon.us-east-2.elasticbeanstalk.com/posts';
   user: string;
   trainer: Trainer;
+  pokemon: Pokemon;
   constructor(private http: HttpClient) { }
 
   getPokemon(url: string): Promise<any> {
@@ -35,7 +37,14 @@ export class HttpService {
   }
 
   getUserPost(): Promise<any> {
-
     return this.http.get(this.url3 +'/'+ this.user).toPromise();
+  }
+
+  getPost(): Promise<any> {
+    return this.http.get(this.url3).toPromise();
+  }
+
+  addPokemon(pokemon: Pokemon): Promise<any> {
+    return this.http.post(this.url4, pokemon).toPromise();
   }
 }
