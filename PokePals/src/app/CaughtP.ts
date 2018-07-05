@@ -4,7 +4,7 @@ export interface CaughtP {
   box: number;
   poke_number: number;
   trainer: {
-    trainer_Id: number
+    trainer_Id: number;
   };
 }
 
