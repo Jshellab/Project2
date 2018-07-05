@@ -16,7 +16,8 @@ export class PokemonComponent implements OnInit {
     name: '',
     sprite: '',
     stats: [],
-    types: []
+    types: [],
+    pokemonId: 0
   };
   constructor(private http: HttpService) { }
 

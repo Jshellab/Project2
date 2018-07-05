@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Trainer } from './Trainer';
+import { Pokemon } from './Pokemon';
+import { PokeBox } from './PokeBox';
 
 @Injectable({
   providedIn: 'root'
@@ -30,12 +32,20 @@ export class HttpService {
     return this.http.post(this.url2, trainer).toPromise();
   }
 
-  getTrainerBoxes(): Promise<any>{
+  getTrainerPoke(): Promise<any>{
     return this.http.get(this.url4 +'/'+ this.trainer.username).toPromise();
   }
 
   getUserPost(): Promise<any> {
 
     return this.http.get(this.url3 +'/'+ this.user).toPromise();
+  }
+
+  movePokemonToParty(pokeBox: PokeBox): Promise<any>{
+    return this.http.post(this.url4, pokeBox).toPromise();
+  }
+
+  movePokemonToBox(partyPoke: PokeBox): Promise<any>{
+    return this.http.post(this.url4, partyPoke).toPromise();
   }
 }
