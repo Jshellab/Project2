@@ -34,7 +34,7 @@ subPost: SubmitPost = {
     this.getPosts();
   }
   PushInfo() {
-    this.subPost.description = document.getElementById('DescripBox').innerText;
+    // this.subPost.description = document.getElementById('DescripBox').value;
     this.subPost.status = 'open';
     this.subPost.trainer.trainer_Id = this.http.trainer.trainer_Id;
     var json = JSON.parse(JSON.stringify(this.subPost));

@@ -15,7 +15,7 @@
           </div>
           <div class="form-group col-lg-12">
             <label for="DescripBox">Description: </label>
-            <textarea class="form-control" id="DescripBox" rows="3" placeholder="Enter why you want it! Or Idk how you're feeling?">{{subPost.description}}</textarea>
+            <textarea class="form-control" id="DescripBox" rows="3" placeholder="Enter why you want it! Or Idk how you're feeling?" [(ngModel)]=subPost.description [ngModelOptions]="{standalone: true}"> </textarea>
           </div>
           </div>
           <button type="submit" class="btn btn-primary" (click)="PushInfo()">Submit Posts!</button>
