@@ -28,8 +28,7 @@ export class UserpostComponent implements OnInit {
   }
   getPosts() {
     this.http.getUserPost().then((res) => {
-      console.log(res);
-      for (let i = 0; i < res.length; i++) {
+      for(let i = 0; i < res.length; i++){
         let currentPost: UserPost = {
           post_Id: 0,
           trade_pokemon: 0,
@@ -42,9 +41,7 @@ export class UserpostComponent implements OnInit {
         currentPost.receive_pokemon = res[i].receive_pokemon;
         currentPost.description = res[i].description;
         currentPost.status = res[i].status;
-        console.log(currentPost);
         this.Postings.push(currentPost);
-        console.log(this.Postings);
       }
     });
   }
