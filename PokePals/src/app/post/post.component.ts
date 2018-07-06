@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Posts} from '../Posts';
 import { UserPost } from '../UserPost';
 import { HttpService } from '../http.service';
+import * as SendBird from 'SendBird';
 
 @Component({
   selector: 'app-post',
@@ -9,15 +10,13 @@ import { HttpService } from '../http.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  Postings: Array <Posts> = [];
   constructor(private http: HttpService) { }
-
+  Postings: Array <Posts> = [];
   ngOnInit() {
     this.getPosts();
   }
   getPosts() {
     this.http.getPost().then((res) => {
-      console.log(res);
       for (let i = 0; i < res.length; i++) {
         let currentPost: Posts = {
           post_Id: 0,
@@ -34,7 +33,6 @@ export class PostComponent implements OnInit {
         currentPost.description = res[i].description;
         currentPost.status = res[i].status;
         this.Postings.push(currentPost);
-        console.log(this.Postings);
       }
     });
   }
