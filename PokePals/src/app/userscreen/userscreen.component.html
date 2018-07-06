@@ -4,5 +4,25 @@
 <app-userpost></app-userpost>
 <app-pokemon></app-pokemon>
 <div class="text-center">
-  <button class="btn-danger btn text-center" style="width: 100%">DANGER DO NOT PRESS WILL DELETE ACCOUNT NO WARNING</button>
+  <button class="btn-danger btn text-center" data-toggle="modal" data-target="#deleteModal" style="width: 100%">DANGER DO NOT PRESS WILL DELETE ACCOUNT NO WARNING</button>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Whoa Whoa Whoa Whoa Whoa Whoa.... You sure you wanna delete this buddy?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">You're Right! PokePals Forever!</button>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="deleteMe()" >I'm 10, I'm going home</button>
+      </div>
+    </div>
+  </div>
 </div>
