@@ -5,4 +5,5 @@ export interface Posts {
   trainer_Id: number;
   description: string;
   status: string;
+  username: string;
 }

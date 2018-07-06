@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   }
 
   getTrainer(){
-    this.http.user = "/"+this.tempUsername;
-    this.http.getTrainer().then((res)=>{
+    this.http.user = this.tempUsername;
+    this.http.getTrainer(this.tempUsername).then((res)=>{
        if(res !== null){
          if(res.password === this.tempPw){
           this.http.trainer = res;

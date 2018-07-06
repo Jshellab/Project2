@@ -31,8 +31,8 @@ export class HttpService {
     return this.http.get(this.url2).toPromise();
   }
 
-  getTrainer(): Promise<any> {
-    return this.http.get(this.url2 + this.user).toPromise();
+  getTrainer(name: string): Promise<any> {
+    return this.http.get(this.url2 +"/"+name).toPromise();
   }
 
   createUser(trainer: Trainer): Promise<any> {
@@ -45,6 +45,10 @@ export class HttpService {
 
   getTrainerPoke(): Promise<any> {
     return this.http.get(this.url4 + '/' + this.trainer.username).toPromise();
+  }
+
+  getOtherTrainerPoke(name: string): Promise<any>{
+    return this.http.get(this.url4+"/"+name).toPromise();
   }
 
   getUserPost(): Promise<any> {
@@ -73,5 +77,16 @@ export class HttpService {
   releasePokemon(pokemonToRelease: PokeBox): Promise<any>{
     return this.http.delete(this.url4+"/delete/"+pokemonToRelease.pokemon_Id).toPromise();
   }
-}
 
+  tradePokemon(currentPokemon: PokeBox): Promise<any>{
+    return this.http.patch(this.url4, JSON.parse(JSON.stringify(currentPokemon))).toPromise();
+  }
+
+  getPokemonById(user: string, id: number): Promise<any>{
+    return this.http.get(this.url4+"/"+user+"/"+id).toPromise();
+  }
+
+  deletePostById(id: number): Promise<any>{
+    return this.http.delete(this.url3+"/delete/"+id).toPromise();
+  }
+}
