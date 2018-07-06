@@ -33,3 +33,7 @@ http.service.ts: Held all of our HTTP calls to the springboot application that w
 http://pokemon.us-east-2.elasticbeanstalk.com/trainers: Displays information on all trainers currently in the system
 http://pokemon.us-east-2.elasticbeanstalk.com/pokemon: Displays all pokemon as well as trainer information tied to them
 http://pokemon.us-east-2.elasticbeanstalk.com/posts: Displays all posts that exist on the database
+
+DELETE calls:
+GET calls:
+POST calls
