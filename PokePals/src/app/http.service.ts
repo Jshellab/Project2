@@ -4,6 +4,7 @@ import { Trainer } from './Trainer';
 import { Pokemon } from './Pokemon';
 import {SubmitPost} from './SubmitPost';
 import { PokeBox } from './PokeBox';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +61,9 @@ export class HttpService {
 
   movePokemonToBox(partyPoke: PokeBox): Promise<any>{
     return this.http.post(this.url4, partyPoke).toPromise();
+  }
+
+  releasePokemon(pokemonToRelease: PokeBox): Promise<any>{
+    return this.http.delete(this.url4+"/delete/"+pokemonToRelease.pokemon_Id).toPromise();
   }
 }

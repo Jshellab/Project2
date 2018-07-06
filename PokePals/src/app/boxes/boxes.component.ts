@@ -20,6 +20,7 @@ export class BoxesComponent implements OnInit {
   pokeInParty: number = 0;
   partyPoke: Array<PokeBox> = [];
   party: Array<Pokemon> = [];
+  pokeToRelease: PokeBox;
 
   ngOnInit() {
     this.getTrainerBoxes();
@@ -43,7 +44,7 @@ export class BoxesComponent implements OnInit {
             this.getPokemon(res[i].poke_number.toString(),res[i].pokemon_Id);
             let currentPokeBox: PokeBox={
               nickname: "",
-              box: 0,
+              box: 1,
               poke_number: res[i].poke_number,
               trainer: res[i].trainer,
               pokemon_Id: res[i].pokemon_Id
@@ -75,6 +76,7 @@ export class BoxesComponent implements OnInit {
     if(this.pokeInParty < 6){
       for(let poke of this.pokeBox){
         if(pokemonId === poke.pokemon_Id){
+          poke.box = 0;
           this.http.movePokemonToParty(JSON.parse(JSON.stringify(poke)));
           this.pokeInParty++;
         }
@@ -125,5 +127,15 @@ export class BoxesComponent implements OnInit {
     else{
       document.getElementById("movetoBox").setAttribute("data-target","#box")
     }
+  }
+  setPokemonToRelease(pokemonId: number){
+    for(let poke of this.pokeBox){
+      if(poke.pokemon_Id === pokemonId){
+        this.pokeToRelease = poke;
+      }
+    }
+  }
+  release(){
+    this.http.releasePokemon(JSON.parse(JSON.stringify(this.pokeToRelease)));
   }
 }
