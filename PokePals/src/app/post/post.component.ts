@@ -18,7 +18,6 @@ export class PostComponent implements OnInit {
   lookingForPokemon: PokeBox;
   offeringTrainer: Trainer;
   constructor(private http: HttpService) { }
-  Postings: Array <Posts> = [];
   ngOnInit() {
     this.getPosts();
   }
