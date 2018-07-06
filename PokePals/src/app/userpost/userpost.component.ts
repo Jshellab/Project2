@@ -3,6 +3,8 @@ import {Pokemon} from '../Pokemon';
 import { HttpService } from '../http.service';
 import { UserPost } from '../UserPost';
 import { SubmitPost } from '../SubmitPost';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-userpost',
@@ -29,7 +31,8 @@ subPost: SubmitPost = {
   //   description: '',
   //   status: '',
   // };
-  constructor(private http: HttpService) { }
+  constructor(private route: ActivatedRoute, private location: Location,
+  private http: HttpService, private router: Router) { }
   ngOnInit() {
     this.getPosts();
   }
