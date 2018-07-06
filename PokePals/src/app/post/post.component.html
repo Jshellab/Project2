@@ -58,11 +58,12 @@
   </div>
 </div>
 <script>
-  var appId ='<3787368C-839F-4C9A-866F-36ACAA695AAC>';
+  var appId = 'https://api.sendbird.com/routing/<3787368C-839F-4C9A-866F-36ACAA695AAC>';
   var UserId = '<MoseyWosey>';
   var nickname = '<guy>';
+  var channelUrl = '<sendbird_open_channel_40062_c9d321f796ad6a88457ccad9256c4ecf1935d354>';
   sbWidget.startWithConnect(appId,userId,nickname,function () {
-    sb.start();
+    sbWidget.showChannel(channelUrl);
   })
 </script>
 
