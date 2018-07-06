@@ -14,7 +14,7 @@ Hibernate/Spring: What was used to control and then query information from our d
 Angular/JS/BootStrap/TypeScript: All used in combination to make design and format our front-end
 
 # Database:
-Consisting of 2 tables
+Consisting of 3 tables
 
 - Trainer Table: PK: Trainer_Id - Holds information on the various trainers that would use our website
 - Pokemon Table: PK: Poke_Id - Holds information on the various pokemon related to the trainers represented on our client-side of the aplication with a JSON object tied to the trainer table
@@ -57,8 +57,13 @@ POST calls:
 
 # API's/Docs referenced:
 JPA: The Java Persistence API is a Java application programming interface specification that describes the management of relational data in applications using Java Platform, Standard Edition and Java Platform, Enterprise Edition
+
 JavaDocs: a documentation generator created by Sun Microsystems for the Java language (now owned by Oracle Corporation) for generating API documentation in HTML format from Java source code
+
 Pokeapi: Consumption-only API that holds large amounts, of pokemon information for referene and call later
+
 SendBird: Messaging API used to incorporate messaging services onto websites, and other application.
+
 Angular:a TypeScript-based open-source front-end web application platform led by the Angular Team at Google and by a community of individuals and corporations
+
 AWS BeanStalk documentation: Documentation used to explain, and define the purpose of AWS beanstalk along with the workflow
