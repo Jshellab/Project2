@@ -12,8 +12,9 @@ Angular/JS/BootStrap/TypeScript: All used in combination to make design and form
 # Database:
 Consisting of 2 tables
 
-- Trainer Table: PK: trainer_Id - Holds information on the various trainers that would use our website
+- Trainer Table: PK: Trainer_Id - Holds information on the various trainers that would use our website
 - Pokemon Table: PK: Poke_Id - Holds information on the various pokemon related to the trainers represented on our client-side of the aplication with a JSON object tied to the trainer table
+- Posts Table: PK: Post_ID - Holds the information on the posts that have been submitted by users over time relating them using the Trainer_Id
 
 # Front End
 Set up as one angular project composed of multiple components each representing a section of our web application:
@@ -34,6 +35,26 @@ http://pokemon.us-east-2.elasticbeanstalk.com/trainers: Displays information on 
 http://pokemon.us-east-2.elasticbeanstalk.com/pokemon: Displays all pokemon as well as trainer information tied to them
 http://pokemon.us-east-2.elasticbeanstalk.com/posts: Displays all posts that exist on the database
 
-DELETE calls:
+DELETE calls: 
+-this.http.delete(this.url2 + '/delete/' + this.trainer.trainer_Id).toPromise(): Calls the DELETE function from our front-end to spring to let it know we want to wipe the information of the trainer in the system, along with his pokemon, and posts they have made
+-this.http.delete(this.url4+"/delete/"+pokemonToRelease.pokemon_Id).toPromise(): Calls the DELETE funciton from our front-end to spring to let it know we wanted to remove a specific pokemon from the database
+- this.http.delete(this.url3+"/delete/"+id).toPromise(): Calls the DELETE function from our front-end to spring to let it know we want to delete a post after it has been accepted
+
 GET calls:
-POST calls
+- this.http.get(this.url2 +"/"+name).toPromise(): Calls a GET function that pulls in all of our information for the entered user
+- this.http.get(this.url + url).toPromise(): Calls a GET function that calls the pokeapi and retreives the object representing the Pokemon's information, then we populate a front end table with that information
+- this.http.get(this.url4 + '/' + this.trainer.username).toPromise(): Calls a GET function that returns all of the pokemon associated with that trainer ID in the DB
+
+POST calls: 
+- this.http.post(this.url3, submissionP).toPromise(): Submits user Posts, and relates them to the Trainer ID so they can be retrieved later
+- this.http.post(this.url4, pokemon).toPromise(): Submits pokemon that are 'caught' and places them in the capturers box for use later
+- this.http.post(this.url4, pokeBox).toPromise(): Submits a POST request that moves a pokemon from your party to the box
+
+
+# API's/Docs referenced:
+JPA: The Java Persistence API is a Java application programming interface specification that describes the management of relational data in applications using Java Platform, Standard Edition and Java Platform, Enterprise Edition
+JavaDocs: a documentation generator created by Sun Microsystems for the Java language (now owned by Oracle Corporation) for generating API documentation in HTML format from Java source code
+Pokeapi: Consumption-only API that holds large amounts, of pokemon information for referene and call later
+SendBird: Messaging API used to incorporate messaging services onto websites, and other application.
+Angular:a TypeScript-based open-source front-end web application platform led by the Angular Team at Google and by a community of individuals and corporations
+AWS BeanStalk documentation: Documentation used to explain, and define the purpose of AWS beanstalk along with the workflow
