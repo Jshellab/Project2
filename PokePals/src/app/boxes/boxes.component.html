@@ -13,7 +13,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger">Release</button>
+        <button type="button" class="btn btn-danger"data-dismiss="modal" (click)="release()">Release</button>
       </div>
     </div>
   </div>
@@ -139,7 +139,7 @@
               </td>
               <td><button class="btn btn-primary" data-toggle="modal" data-target="" (click)="moveToParty(pokemon.pokemonId)" id="moveToParty">Move</button></td>
               <td>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#modal">
+                <button class="btn btn-danger" data-toggle="modal" data-target="#modal" (click)="setPokemonToRelease(pokemon.pokemonId)">
                   Release
                 </button>
               </td>
