@@ -4,6 +4,7 @@ import { UserPost } from '../UserPost';
 import { HttpService } from '../http.service';
 import { PokeBox } from '../PokeBox';
 import { Trainer } from '../Trainer';
+import * as SendBird from 'SendBird';
 
 @Component({
   selector: 'app-post',
@@ -11,12 +12,13 @@ import { Trainer } from '../Trainer';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+
   Postings: Array <Posts> = [];
   offeringPokemon: PokeBox;
   lookingForPokemon: PokeBox;
   offeringTrainer: Trainer;
   constructor(private http: HttpService) { }
-
+  Postings: Array <Posts> = [];
   ngOnInit() {
     this.getPosts();
   }

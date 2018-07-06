@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <link rel='shortcut icon' href='https://s3.amazonaws.com/sendbird-static/favicon/favicon.ico' type='image/x-icon'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <title>Live Chat Sample</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #20242a;
+      font-family: 'Lato';
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top {
+      width: 1100px;
+      height: 43px;
+      padding: 20px 0;
+      margin: 0 auto;
+      position: relative;
+    }
+    .top > a {
+      display: block;
+      float: left;
+    }
+    .top > span {
+      float: left;
+      color: #868d99;
+      font-size: 13px;
+      position: absolute;
+      bottom: 28px;
+      left: 180px;
+      font-family: 'Open Sans';
+    }
+    .sendbird-logo {
+      border: none;
+      height: 40px;
+    }
+
+    .content {
+      width: 1100px;
+      height: 808px;
+      margin: 0 auto;
+    }
+
+    .content-image {
+      display: inline-block;
+      width: 680px;
+      height: 808px;
+    }
+
+    .content-chat {
+      width: 400px;
+      height: 100%;
+      float: right;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="top">
+  <a href="https://sendbird.com" target="_blank">
+    <!--<img class="sendbird-logo" src="https://dxstmhyqfqr1o.cloudfront.net/logo/logo_SendBird_positive.svg" alt="SendBird">-->
+    <img class="sendbird-logo" src="https://dxstmhyqfqr1o.cloudfront.net/liveChat/logo_livechat.svg" alt="SendBird">
+  </a>
+  <span>version 0.6.0</span>
+</div>
+<div class="content">
+  <div class="content-image">
+    <img src="https://dxstmhyqfqr1o.cloudfront.net/liveChat/bg_livechat_x2.png" width="680" height="810">
+  </div>
+  <div class="content-chat" id="sb_chat"></div>
+</div>
+
+</body>
+
+<script src="SendBird.min.js"></script>
+<script src="build/liveChat.SendBird.js"></script>
+<script>
+  var appId = '9DA1B1F4-0BE6-4DA8-82C5-2E81DAB56F23';
+  var channelUrl = 'sendbird_open_channel_1_5b0336cc55abf6d3464e1d2a263a8e343d3b2b42'; // channel: text_chat_test
+  liveChat.start(appId, channelUrl);
+</script>
+
+</html>
