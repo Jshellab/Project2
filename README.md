@@ -4,9 +4,13 @@ Project Overview: Create a Pokemon application that gets information from the Po
 
 # Technology integrated in project:
 AWS Elastic Beanstalk: Hosts our spring boot application back-end allowing us to make calls and query the database
+
 RDS: Hosts the database and tables for our project 
+
 GitHub: Hosted our Project for version control, and saved it multiple times when errors were made on our side
+
 Hibernate/Spring: What was used to control and then query information from our database
+
 Angular/JS/BootStrap/TypeScript: All used in combination to make design and format our front-end
 
 # Database:
