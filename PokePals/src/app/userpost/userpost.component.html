@@ -1,6 +1,26 @@
 <div class="container">
   <div class="card">
     <div class="card-body" id="cardBody">
+      <div>
+        <h1>Make a post!</h1>
+        <form>
+          <div class="form-row">
+          <div class="form-group col-md-6">
+            <label class="form-check-label" for="PokemonRequest1">Pokemon 1 ID: </label>
+            <input type="number" class="form-control" id="PokemonRequest1" [(ngModel)]= subPost.trade_pokemon placeholder="Mada Mada" [ngModelOptions]="{standalone: true}" />
+          </div>
+          <div class="form-group col-md-6">
+            <label class="form-check-label" for="PokemonRequest2">Pokemon 2 ID: </label>
+            <input type="number" class="form-control" id="PokemonRequest2" [(ngModel)]=subPost.receive_pokemon placeholder="Mada Mada" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group col-lg-12">
+            <label for="DescripBox">Description: </label>
+            <textarea class="form-control" id="DescripBox" rows="3" placeholder="Enter why you want it! Or Idk how you're feeling?" [(ngModel)]=subPost.description [ngModelOptions]="{standalone: true}"> </textarea>
+          </div>
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="PushInfo()">Submit Posts!</button>
+        </form>
+      </div>
 
       <div>
         <h1><img src="../../assets/delibird.gif">Submitted Trade Requests</h1>

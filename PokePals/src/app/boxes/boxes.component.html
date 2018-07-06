@@ -1,16 +1,115 @@
 <app-navbar></app-navbar>
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Release Pokemon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        If you release this Pokemong it will be gone forever, are you sure about that?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger"data-dismiss="modal" (click)="release()">Release</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="party" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Too many Pokemon in party!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You can only have 6 pokemon at a time in your party. Please deposit a Pokemon from your party into your box before adding more.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Not enough Pokemon in Party!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You need at least one Pokemon in your party. Please add more Pokemon to your party before depositing more.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="card rounded-bottom">
     <div class="card-header">
       <div class="row justify-content-center mb-2">
-        <h3 class="card-text">Your Boxes</h3>
+        <h3 class="card-text">Your Pokemon</h3>
       </div>
       <div class="row justify-content-center mb-2">
-        <button class="btn btn-info btn-block col-4" type="submit" name="button" (click)="onSubmit()"><h4>Get Pokemon</h4></button>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Views
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="btn btn-info dropdown-item" (click)="viewBox()">View Boxes</button>
+            <button class="btn btn-info dropdown-item" (click)="viewParty()">View Party</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="card-body">
-      <div *ngIf="showing">
+      <div *ngIf="showParty" id="partyDiv">
+        <h4>Current Party</h4>
+        <table class ="table table-bordered table-light">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Appearance</th>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Type(s)</th>
+              <th scope="col">Base Stats</th>
+              <th scope="col">Move to Box</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let pokemon of party">
+              <td><img src={{pokemon.sprite}}></td>
+              <td>{{pokemon.id}}</td>
+              <td>{{pokemon.name | titlecase}}</td>
+              <td>
+                <div *ngFor = "let type of pokemon.types">
+                  {{type.type.name | titlecase}}
+                </div>
+              </td>
+              <td>
+                <div *ngFor = "let stat of pokemon.stats">
+                  {{stat.stat.name | titlecase}}: {{stat.base_stat}}
+                </div>
+              </td>
+              <td><button class="btn btn-primary" data-toggle="modal" data-target="" (click)="moveToBox(pokemon.pokemonId)" id="movetoBox">Move</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-body">
+      <div *ngIf="showBox" id="boxDiv">
+        <h4>Box</h4>
         <table class="table table-bordered table-light">
           <thead class="thead-dark">
             <tr>
@@ -19,6 +118,8 @@
               <th scope="col">Name</th>
               <th scope="col">Type(s)</th>
               <th scope="col">Base Stats</th>
+              <th scope="col">Move to Party</th>
+              <th scope="col">Release</th>
             </tr>
           </thead>
           <tbody>
@@ -35,6 +136,12 @@
                 <div *ngFor = "let stat of pokemon.stats">
                   {{stat.stat.name | titlecase}}: {{stat.base_stat}}
                 </div>
+              </td>
+              <td><button class="btn btn-primary" data-toggle="modal" data-target="" (click)="moveToParty(pokemon.pokemonId)" id="moveToParty">Move</button></td>
+              <td>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#modal" (click)="setPokemonToRelease(pokemon.pokemonId)">
+                  Release
+                </button>
               </td>
             </tr>
           </tbody>
