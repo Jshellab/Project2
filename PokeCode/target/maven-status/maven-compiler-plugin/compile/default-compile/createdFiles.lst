@@ -1,0 +1,16 @@
+com\revature\services\PokemonService.class
+com\revature\services\TrainerServiceImpl.class
+com\revature\models\Post.class
+com\revature\services\PokemonServiceImpl.class
+com\revature\controllers\PokemonController.class
+com\revature\services\PostServiceImpl.class
+com\revature\models\Trainer.class
+com\revature\controllers\PostController.class
+com\revature\services\TrainerService.class
+com\revature\models\Pokemon.class
+com\revature\repositories\PokemonRepository.class
+com\revature\repositories\PostRepository.class
+com\revature\controllers\TrainerController.class
+com\revature\BootDriver.class
+com\revature\repositories\TrainerRepository.class
+com\revature\services\PostService.class

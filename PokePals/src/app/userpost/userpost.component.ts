@@ -24,28 +24,17 @@ subPost: SubmitPost = {
     trainer_Id: 0
   }
 };
-  // currentPost: UserPost = {
-  //   post_Id: 0,
-  //   trade_pokemon: 0,
-  //   receive_pokemon: 0,
-  //   description: '',
-  //   status: '',
-  // };
+
   constructor(private route: ActivatedRoute, private location: Location,
   private http: HttpService, private router: Router) { }
   ngOnInit() {
     this.getPosts();
   }
   PushInfo() {
-    // this.subPost.description = document.getElementById('DescripBox').value;
     this.subPost.status = 'open';
     this.subPost.trainer.trainer_Id = this.http.trainer.trainer_Id;
     var json = JSON.parse(JSON.stringify(this.subPost));
     this.http.addUserPost(json);
-    // this.subPost.trade_pokemon;
-    // this.subPost.status = 'open';
-    // this.subPost.trainer.trainer_Id = this.http.trainer.trainer_Id;
-    // this.http.addUserPost();
   }
   getPosts() {
     this.http.getUserPost().then((res) => {

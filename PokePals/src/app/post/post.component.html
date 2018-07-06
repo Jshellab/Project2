@@ -11,12 +11,11 @@
           <thead class="thead-dark">
           <tr>
             <th scope="col">PostID</th>
-            <th scope="col">Poke1</th>
-            <th scope="col">Poke2</th>
-            <th scope="col">UserID</th>
+            <th scope="col">Offering</th>
+            <th scope="col">Looking for</th>
+            <th scope="col">Username</th>
             <th scope="col">Description</th>
-            <th scope="col">Status</th>
-            <th scope="col">Agree/Deny</th>
+            <th scope="col">Agree</th>
           </tr>
           </thead>
           <tbody>
@@ -24,11 +23,10 @@
             <td>{{currentPost.post_Id}}</td>
             <td>{{currentPost.trade_pokemon}}</td>
             <td>{{currentPost.receive_pokemon}}</td>
-            <td>{{currentPost.trainer_Id}}</td>
+            <td>{{currentPost.username}}</td>
             <td>{{currentPost.description}}</td>
-            <td>{{currentPost.status}}</td>
             <td>
-              <button class="btn btn-success" style="width:100%;">Agree</button>
+              <button class="btn btn-success" style="width:100%;" (click)="trade(currentPost.username, currentPost.trade_pokemon, currentPost.receive_pokemon, currentPost.post_Id)">Agree</button>
             </td>
           </tr>
           </tbody>
@@ -36,4 +34,34 @@
       </div>
     </div>
   </div>
+  <div id="sb_widget">
+    <div class="widget ic-login sb-fade-in" style="display: block;">
+      <div class="notification"></div>
+    </div>
+    <div class="channel-board sb-fade-out" style="display: none">
+      <div class="board-top">
+        <div class="title">Posts Widget</div>
+        <div class="btn ic-minimize"></div>
+        <div class="btn ic-option">
+          <div class="option-menu">
+            <div class="option-content">Exit</div>
+          </div>
+        </div>
+        <div class="btn ic-new-chat">
+          <span class="tooltip">New message</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-section"></div>
+  </div>
 </div>
+<script>
+  var appId = 'https://api.sendbird.com/routing/<3787368C-839F-4C9A-866F-36ACAA695AAC>';
+  var UserId = '<MoseyWosey>';
+  var nickname = '<guy>';
+  var channelUrl = '<sendbird_open_channel_40062_c9d321f796ad6a88457ccad9256c4ecf1935d354>';
+  sbWidget.startWithConnect(appId,userId,nickname,function () {
+    sbWidget.showChannel(channelUrl);
+  })
+</script>
+
